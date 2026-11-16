@@ -1,6 +1,8 @@
 package com.example.notes;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
+import com.example.notes.sourcemanagers.SharedPrefsManager;
+
 public class MainActivity extends AppCompatActivity {
+    ArrayList<String> listNoteItems = new ArrayList<>();
+    ArrayAdapter<String> adapter;
+    ListView noteslist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +29,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        this.noteslist = findViewById(R.id.noteslist);
+        this.adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.listNoteItems);
+        this.noteslist.setAdapter(adapter);
     }
 }
