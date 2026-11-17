@@ -5,7 +5,7 @@
     <string name="note_text" translatable="false">Note text</string>
     <string name="msg_last_saved_note" translatable="false">Last saved note</string>
 
-    <string name="add_note">Add Note</string>
+    <string name="add_note" translatable="false">Add Note</string>
     <string name="remove_note" translatable="false">Remove note</string>
     <string name="read_from_db" translatable="false">Read from DB note</string>
     <string name="read_from_file" translatable="false">Read from file</string>

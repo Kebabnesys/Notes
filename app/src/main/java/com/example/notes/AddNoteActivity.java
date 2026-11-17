@@ -3,6 +3,8 @@ package com.example.notes;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -21,8 +23,14 @@ public class AddNoteActivity extends AppCompatActivity {
 
     public void onBtnSaveClose(View view) {
         String addNote = this.Note.getText().toString();
-        SharedPrefsManager.writeNotesToSharedPrefs(this, addNote);
-        finish();
+        if(addNote.isEmpty())
+        {
+            Toast.makeText(getApplicationContext(), "Write something!", Toast.LENGTH_LONG).show();
+        }
+        else{
+            SharedPrefsManager.writeNotesToSharedPrefs(this, addNote);
+            finish();
+        }
     }
 
 }

@@ -23,7 +23,11 @@
         </activity>
         <activity
             android:name=".DeleteNoteActivity"
-            android:exported="false"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".AddNoteActivity"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize" />
     </application>
 
