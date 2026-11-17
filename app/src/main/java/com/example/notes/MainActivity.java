@@ -1,7 +1,10 @@
 package com.example.notes;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -32,5 +35,13 @@ public class MainActivity extends AppCompatActivity {
         this.noteslist = findViewById(R.id.noteslist);
         this.adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, this.listNoteItems);
         this.noteslist.setAdapter(adapter);
+
+        Button addNote = (Button) findViewById(R.id.newNote);
+        addNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), AddNoteActivity.class);
+                view.getContext().startActivity(intent);}
+        });
     }
 }

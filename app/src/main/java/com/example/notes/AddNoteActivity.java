@@ -16,12 +16,12 @@ public class AddNoteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
 
-        this.Note = findViewById(R.id.Note);
+        Note = findViewById(R.id.Note);
     }
 
     public void onBtnSaveClose(View view) {
         String addNote = this.Note.getText().toString();
-        SharedPrefsManager.(this, addNote);
+        SharedPrefsManager.writeNotesToSharedPrefs(this, addNote);
         finish();
     }
 
